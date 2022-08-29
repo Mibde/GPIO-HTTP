@@ -30,12 +30,10 @@ fn main() {
             if *answer != last {
                 last = *answer;
                 if last == gpio::Level::Low {
-                    let _body = reqwest::blocking::get("https://mibde.fr/door&door=open").unwrap_or("OUPS")
-                    .text();
+                    let _body = reqwest::blocking::get("https://mibde.fr/door&door=open");
                 }
                 else {
-                    let _body = reqwest::blocking::get("https://mibde.fr/door&door=close").unwrap_or("OUPS")
-                    .text();
+                    let _body = reqwest::blocking::get("https://mibde.fr/door&door=close");
                 }
                 //println!("Second tread : {}", answer);
             }
