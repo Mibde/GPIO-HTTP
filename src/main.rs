@@ -1,9 +1,5 @@
 use rppal::gpio::Gpio;
 use rppal::gpio;
-use std::sync::Arc;
-use std::sync::Mutex;
-use std::thread;
-use std::time::Duration;
 
 fn main() {
 
