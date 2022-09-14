@@ -1,6 +1,7 @@
 use rppal::gpio::Gpio;
 use rppal::gpio;
-
+use std::thread;
+use std::time::Duration;
 fn main() {
 
     let state = gpio::Level::Low;
@@ -20,7 +21,7 @@ fn main() {
                 let _body = reqwest::blocking::get("https://mibde.fr/door&door=close");
             }
         }
-    
+        thread::sleep(Duration::from_secs(1));
     }
    
 }
