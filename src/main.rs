@@ -4,7 +4,7 @@ use rppal::gpio;
 fn send(pin : gpio::Level::Low) {
     match pin {
         gpio::Level::Low => { let _body = reqwest::blocking::get("https://mibde.fr/websocketDoor/?door=open");},
-        _ => let _body = {reqwest::blocking::get("https://mibde.fr/websocketDoor/?door=close");},
+        _ => {let _body = reqwest::blocking::get("https://mibde.fr/websocketDoor/?door=close");},
     }
 }
 fn main() {
