@@ -11,9 +11,9 @@ fn main() {
     let gpio = Gpio::new().unwrap();
     let mut pin_analog = gpio.get(23).unwrap().into_input().read();
     send(pin_analog);
-    let last = pin_analog;
+    let mut last = pin_analog;
     loop {
-        pin_analog = gpio.get(23).unwrap().into_input();
+        pin_analog = gpio.get(23).unwrap().into_input().read();
         if pin_analog != last {
             send(pin_analog);
             last = pin_analog;
