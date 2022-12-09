@@ -4,7 +4,6 @@ use reqwest::blocking::Response;
 use reqwest::Error;
 use rppal::gpio::Gpio;
 use rppal::gpio;
-use rppal::spi::Error;
 
 fn send(pin : gpio::Level) -> Result<Response, Error> {
     match pin {
