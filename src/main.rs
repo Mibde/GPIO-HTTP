@@ -15,10 +15,10 @@ fn init(pin : gpio::Level) {
     let un_second = Duration::from_millis(500);
     loop {
         match send(pin) {
-            Ok(x) => {
+            Ok(_x) => {
                 break;
             },
-            Err(err) => {
+            Err(_err) => {
                 thread::sleep(un_second);
             }
         }
