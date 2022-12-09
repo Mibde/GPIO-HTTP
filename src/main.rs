@@ -9,7 +9,7 @@ fn send(pin : gpio::Level) {
 }
 fn main() {
     let gpio = Gpio::new().unwrap();
-    let mut pin_analog = gpio.get(23).unwrap().into_input();
+    let mut pin_analog = gpio.get(23).unwrap().into_input().read();
     send(pin_analog);
     let last = pin_analog;
     loop {
